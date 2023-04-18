@@ -9,6 +9,9 @@ using System.Collections;
 public class AudioInputManager : MonoBehaviour
 {
     public WhisperManager whisper;
+    public delegate void AudioInputEvent(string input);
+    public static AudioInputEvent onAudioInput;
+
 
     [Header("Mic settings")]
     public int maxLengthSec = 999;
@@ -140,6 +143,7 @@ public class AudioInputManager : MonoBehaviour
             return;
 
         outputText.text = res.Result;
+        onAudioInput?.Invoke(res.Result);
     }
 
 
