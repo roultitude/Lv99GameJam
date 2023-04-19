@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,16 @@ public abstract class Command : MonoBehaviour
     public void StartCooldown()
     {
         StartCoroutine(StartCooldownInternal());
+    }
+
+    public enum SpellType
+    {
+        MELEE,
+        AOE,
+        ORBITAL,
+        PROJECTILE,
+        DODGE,
+        SUPER
     }
 
     private IEnumerator StartCooldownInternal()

@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class Spell : Command
 {
     public abstract void Execute();
+
+    public SpellType spellType;
 }

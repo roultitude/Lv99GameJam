@@ -5,13 +5,17 @@ using UnityEngine.UI;
 using Whisper;
 using TMPro;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using UnityEngine.Windows;
 
 public class AudioInputManager : MonoBehaviour
 {
     public WhisperManager whisper;
     public delegate void AudioInputEvent(string input);
     public static AudioInputEvent onAudioInput;
-
+    public string pattern = @"[\[\(][^\]\)]*[\]\)]";
 
     [Header("Mic settings")]
     public int maxLengthSec = 999;
@@ -81,7 +85,7 @@ public class AudioInputManager : MonoBehaviour
         if (!_isRecording)
             return;
 
-        UnityEngine.Debug.Log("Starting Segment");
+        //UnityEngine.Debug.Log("Starting Segment");
         _isSegmentTracking = true;
         _segmentCursor = Microphone.GetPosition(null);
     }
@@ -96,7 +100,7 @@ public class AudioInputManager : MonoBehaviour
         var data = GetTrimmedData(cursor);
         Transcribe(data);
 
-        UnityEngine.Debug.Log("Stopping Segment");
+        //UnityEngine.Debug.Log("Stopping Segment");
     }
 
     public void StopRecord()
@@ -132,14 +136,14 @@ public class AudioInputManager : MonoBehaviour
     {
         
         if (data.Length < frequency / 4) return;
-        UnityEngine.Debug.Log(data.Length);
+        //UnityEngine.Debug.Log(data.Length);
         var sw = new Stopwatch();
         sw.Start();
 
         var res = await whisper.GetTextAsync(data, _clip.frequency, _clip.channels);
 
         timeText.text = $"Time: {sw.ElapsedMilliseconds} ms";
-        if (res == null)
+        if (res == null || res.Result.Length == 0|| Regex.IsMatch(res.Result, pattern))
             return;
 
         outputText.text = res.Result;
@@ -165,6 +169,7 @@ public class AudioInputManager : MonoBehaviour
         }
 
         float db = 20 * Mathf.Log10(Mathf.Abs(levelMax));
+        //print(db);
         return db;
     }
     

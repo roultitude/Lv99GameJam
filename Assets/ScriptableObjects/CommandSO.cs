@@ -9,8 +9,6 @@ public class CommandSO : ScriptableObject
 
     public List<string> alternative;
 
-    public string commandName;
-
     [Serializable]
     public enum CommandType
     {
