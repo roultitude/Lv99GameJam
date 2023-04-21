@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using Whisper;
 using TMPro;
 using System.Collections;
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine.Windows;
