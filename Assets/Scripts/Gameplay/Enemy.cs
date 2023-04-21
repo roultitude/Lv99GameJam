@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public EnemySO data;
     public SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    private float health;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -15,5 +18,19 @@ public class Enemy : MonoBehaviour
     {
         this.data = data;
         spriteRenderer.sprite = data.sprite;
+        health = data.maxHP;
+    }
+    public void TakeDamage(float amt)
+    {
+        health -= amt;
+        if (health < 0) 
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

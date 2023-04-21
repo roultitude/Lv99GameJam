@@ -7,7 +7,7 @@ public class SlashCommand : SpellCommand
     public void Start()
     {
         cooldown = 5f;
-        baseDamage = 3f;
+        baseDamage = 5f;
         baseSpeed = 3f;
         baseSize = 5f;
         commandSOName = "Slash";

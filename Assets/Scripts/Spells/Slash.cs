@@ -24,5 +24,14 @@ public class Slash : Spell
         GetComponent<Rigidbody2D>().velocity = (transform.rotation * Vector3.up).normalized * speed;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        Debug.Log(collision.name);
+        Debug.Log(enemy);
+        if (!enemy) return;
+        enemy.TakeDamage(damage);
+    }
+
 
 }
