@@ -9,7 +9,7 @@ public class MeowCommand : SpellCommand
     public void Start()
     {
         cooldown = 2f;
-        baseDamage = 3f;
+        baseDamage = 5f;
         baseSpeed = 5f;
         baseSize = 5f;
         commandSOName = "Meow";
@@ -23,7 +23,7 @@ public class MeowCommand : SpellCommand
 
 
 
-        GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Meow), transform.position, transform.rotation);
+        GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Meow), transform);
         print("dmg: " + damage + "\t speed :" + speed + "\t size" + size);
         obj.GetComponent<Spell>().Init(damage, speed, size);
         

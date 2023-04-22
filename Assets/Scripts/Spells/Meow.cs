@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Meow : Spell
 {
-    private float rotPerFrameEuler = 360;
-    private float lifeTime = 0.25f;
+    private float rotPerFrameEuler = 180;
+    private float lifeTime = 2f;
 
 
 
@@ -19,7 +19,7 @@ public class Meow : Spell
     void FixedUpdate()
     {
         print(rotPerFrameEuler * Time.fixedDeltaTime);
-        transform.rotation *= Quaternion.Euler(0, 0, rotPerFrameEuler * Time.fixedDeltaTime);
+        transform.localRotation *= Quaternion.Euler(0, 0, rotPerFrameEuler * Time.fixedDeltaTime);
         //GetComponent<Rigidbody2D>().velocity = (transform.rotation * Vector3.up).normalized * speed;
     }
     private void OnTriggerEnter2D(Collider2D collision)
