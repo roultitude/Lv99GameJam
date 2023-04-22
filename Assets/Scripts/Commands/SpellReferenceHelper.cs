@@ -12,7 +12,9 @@ public class SpellReferenceHelper : MonoBehaviour
     [Serializable]
     public enum SpellNames
     {
-        Slash
+        Slash,
+        Meow
+
     }
     [Serializable]
     public struct NameAndPrefab

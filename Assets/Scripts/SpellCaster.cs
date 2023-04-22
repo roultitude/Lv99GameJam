@@ -7,7 +7,7 @@ using UnityEngine.WSA;
 public class SpellCaster : MonoBehaviour
 {
     List<Command> commands;
-    Queue<CommandSO> modifierStack = new(10);
+    Queue<CommandSO> modifierQueue = new(10);
     bool hasSubscribed = false;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class SpellCaster : MonoBehaviour
         }
         else
         {
-            modifierStack.Enqueue(command);
+            modifierQueue.Enqueue(command);
         }
 
     }
@@ -48,13 +48,13 @@ public class SpellCaster : MonoBehaviour
         print("Doing the spell!");
         SpellCommand toCast = (SpellCommand) FindAvailableCommand(spell);
         if(toCast == null) {
-            modifierStack.Clear();
+            modifierQueue.Clear();
             return;
         }
 
         toCast.beginSpellCreation();
 
-        foreach(CommandSO command in modifierStack)
+        foreach(CommandSO command in modifierQueue)
         {
             ModifierCommand modifier = (ModifierCommand) FindAvailableCommand(command);
             if( modifier && modifier.applicableSpellTypes.Contains(toCast.spellType))
@@ -63,6 +63,7 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
+        modifierQueue.Clear();
         toCast.execute();
     }
 
