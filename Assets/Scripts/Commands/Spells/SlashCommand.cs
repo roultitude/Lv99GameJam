@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SlashCommand : SpellCommand
 {
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         cooldown = 5f;
         baseDamage = 5f;
         baseSpeed = 3f;
@@ -14,13 +15,10 @@ public class SlashCommand : SpellCommand
     }
     public override void execute()
     {
-        if (isOnCooldown)
-            return;
 
         GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Slash),transform.position,transform.rotation);
         print("dmg: " + damage + "\t speed :" + speed + "\t size" + size);
         obj.GetComponent<Spell>().Init(damage, speed, size);
 
-        base.StartCooldown();
     }
 }

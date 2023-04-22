@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float maxHealth;
     [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
     [SerializeField]
     private ContactFilter2D enemyFilter;
     [SerializeField]
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private float currentHealth;
     private Rigidbody2D rb;
     private PolygonCollider2D collider;
+
+    public Vector2 prevMoveDir;
 
     private void Awake()
     {
@@ -46,7 +48,17 @@ public class Player : MonoBehaviour
     private void Move()
     {
         Vector2 moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        if(moveDir.magnitude >= 1)
+        {
+            prevMoveDir = moveDir;
+        }
+
         rb.MovePosition((Vector2) transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
+    }
+
+    public void Blink(Vector2 amt)
+    {
+        transform.position += new Vector3(amt.x, amt.y, 0);
     }
 
     private void CheckForDmg()

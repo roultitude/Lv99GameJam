@@ -6,18 +6,18 @@ using UnityEngine;
 
 public class MeowCommand : SpellCommand
 {
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         cooldown = 2f;
         baseDamage = 3f;
-        baseSpeed = 5f;
+        baseSpeed = 1f;
         baseSize = 5f;
         commandSOName = "Meow";
+        spellType = SpellType.ORBITAL;
     }
     public override void execute()
     {
-        if (isOnCooldown)
-            return;
 
         Vector3 rotated = (transform.rotation * Quaternion.Euler(0f, 0f, 0f) * Vector3.up ).normalized;
 
@@ -27,8 +27,5 @@ public class MeowCommand : SpellCommand
         print("dmg: " + damage + "\t speed :" + speed + "\t size" + size);
         obj.GetComponent<Spell>().Init(damage, speed, size);
         
-        
-
-        base.StartCooldown();
     }
 }

@@ -11,6 +11,8 @@ public abstract class Command : MonoBehaviour
 
     [HideInInspector] public string commandSOName;
 
+    [HideInInspector] public bool isSpell;
+
     public void StartCooldown()
     {
         StartCoroutine(StartCooldownInternal());
@@ -32,6 +34,11 @@ public abstract class Command : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
         yield return null;
+    }
+
+    public void EndCooldown()
+    {
+        isOnCooldown = false;
     }
 
     

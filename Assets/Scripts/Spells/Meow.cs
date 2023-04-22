@@ -18,8 +18,7 @@ public class Meow : Spell
     
     void FixedUpdate()
     {
-        print(rotPerFrameEuler * Time.fixedDeltaTime);
-        transform.rotation *= Quaternion.Euler(0, 0, rotPerFrameEuler * Time.fixedDeltaTime);
+        transform.rotation *= Quaternion.Euler(0, 0, rotPerFrameEuler * Time.fixedDeltaTime * speed);
         //GetComponent<Rigidbody2D>().velocity = (transform.rotation * Vector3.up).normalized * speed;
     }
     private void OnTriggerEnter2D(Collider2D collision)

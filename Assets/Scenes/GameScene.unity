@@ -673,26 +673,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &999033412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6995921546983686532, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
-  m_PrefabInstance: {fileID: 1898972207}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &999033415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999033412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc9a1f0944d9fa64a8ea8ef4c68d57f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameAndPrefab:
-  - name: 0
-    prefab: {fileID: 5694083967715124672, guid: ef88e587d303d1f42b62365ee6c19ca5, type: 3}
 --- !u!1 &1032523395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6271147594750592550, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
       propertyPath: maxHealth
       value: 10000
@@ -1160,6 +1144,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1758243222}
+    - targetCorrespondingSourceObject: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758243228}
+    - targetCorrespondingSourceObject: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758243234}
+    - targetCorrespondingSourceObject: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758243235}
+    - targetCorrespondingSourceObject: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758243236}
   m_SourcePrefab: {fileID: 100100000, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
 --- !u!1 &1758243219 stripped
 GameObject:
@@ -1180,10 +1176,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 3
   speed: 3
   size: 3
+  lotsOf: 0
 --- !u!114 &1758243221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273a33eacda07b3499c639654aaea9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands: []
 --- !u!114 &1758243222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,10 +1209,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 0
   speed: 0
   size: 0
+  lotsOf: 0
 --- !u!114 &1758243223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,10 +1229,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 0
   speed: 0
   size: 0
+  lotsOf: 0
 --- !u!114 &1758243224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,10 +1249,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 0
   speed: 0
   size: 0
+  lotsOf: 0
 --- !u!114 &1758243225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,10 +1269,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 0
   speed: 0
   size: 0
+  lotsOf: 0
 --- !u!114 &1758243226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,10 +1289,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   commandSOName: 
+  isSpell: 0
   spellType: 0
   damage: 0
   speed: 0
   size: 0
+  lotsOf: 0
 --- !u!114 &1758243227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +1309,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   commandSOName: 
+  isSpell: 0
+--- !u!114 &1758243228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758243219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0a9e9823f75f24599fe3470169d4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  commandSOName: 
+  isSpell: 0
+  spellType: 0
+  damage: 0
+  speed: 0
+  size: 0
+  lotsOf: 0
+--- !u!114 &1758243234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758243219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59c9ddb11cd8be45a24773ba4757cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  commandSOName: 
+  isSpell: 0
+  spellType: 0
+  damage: 0
+  speed: 0
+  size: 0
+  lotsOf: 0
+--- !u!114 &1758243235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758243219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d252ebf0b3f19a04d8b569e3d5fd6863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  commandSOName: 
+  isSpell: 0
+  spellType: 0
+  damage: 0
+  speed: 0
+  size: 0
+  lotsOf: 0
+--- !u!114 &1758243236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758243219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49a16fd57b27de4dba2291e6eb00b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  commandSOName: 
+  isSpell: 0
+  spellType: 0
+  damage: 0
+  speed: 0
+  size: 0
+  lotsOf: 0
 --- !u!1 &1768178809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,11 +1477,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpellSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 9150519015000028508, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
+      propertyPath: nameAndPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150519015000028508, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
+      propertyPath: nameAndPrefab.Array.data[2].name
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150519015000028508, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
+      propertyPath: nameAndPrefab.Array.data[3].name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150519015000028508, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
+      propertyPath: nameAndPrefab.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 5694083967715124672, guid: d69c727953f725f4f9a37bd317466163, type: 3}
+    - target: {fileID: 9150519015000028508, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
+      propertyPath: nameAndPrefab.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 2159145928482906798, guid: 4f0acf8fa78700042ac40b964a556a07, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6995921546983686532, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 999033415}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d24d440a36a984ca6682ecb9c4d1df, type: 3}
