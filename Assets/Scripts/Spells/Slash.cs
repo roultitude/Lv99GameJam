@@ -5,17 +5,17 @@ using UnityEngine.UIElements;
 
 public class Slash : Spell
 {
-    [HideInInspector] public Quaternion rotBase = Quaternion.Euler(0,0,-45);
-    [HideInInspector] public float rotPerSecEuler = 1f;
-    [HideInInspector] public float rotIncrement = 1f;
-    [HideInInspector] public float lifeTime = 4f;
+    private Quaternion rotBase = Quaternion.Euler(0,0,-45);
+    private float rotPerSecEuler = 1f;
+    private float rotIncrement = 1f;
+    private float lifeTime = 4f;
 
 
 
     private void Start()
     {
         transform.rotation *= rotBase;
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, lifeTime);
     }
     void FixedUpdate()
     {

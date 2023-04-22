@@ -39,6 +39,8 @@ public class AudioInputManager : MonoBehaviour
     private AudioClip _clip;
     [SerializeField]
     private int _segmentCursor;
+
+    public bool printDB = false;
     private void OnEnable()
     {
         StartRecord();
@@ -168,7 +170,8 @@ public class AudioInputManager : MonoBehaviour
         }
 
         float db = 20 * Mathf.Log10(Mathf.Abs(levelMax));
-        //print(db);
+        if(printDB)
+            print(db);
         return db;
     }
     
