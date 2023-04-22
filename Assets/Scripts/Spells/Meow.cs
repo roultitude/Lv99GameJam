@@ -22,5 +22,11 @@ public class Meow : Spell
         transform.rotation *= Quaternion.Euler(0, 0, rotPerFrameEuler * Time.fixedDeltaTime);
         //GetComponent<Rigidbody2D>().velocity = (transform.rotation * Vector3.up).normalized * speed;
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        print("meow is hitting");
+        if (!enemy) return;
+        enemy.TakeDamage(damage);
+    }
 }

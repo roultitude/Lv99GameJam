@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6725269110308528920}
   - component: {fileID: 7351027088350256970}
+  - component: {fileID: 9150519015000028508}
   m_Layer: 0
   m_Name: SpellSystem
   m_TagString: Untagged
@@ -58,3 +59,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e9a7ec12a7a81e409dac4fe324a958d, type: 2}
   - {fileID: 11400000, guid: 0f82e780509e4dc408c0c8932c124701, type: 2}
   commandHistory: 
+--- !u!114 &9150519015000028508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995921546983686532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9a1f0944d9fa64a8ea8ef4c68d57f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameAndPrefab:
+  - name: 0
+    prefab: {fileID: 5694083967715124672, guid: ef88e587d303d1f42b62365ee6c19ca5, type: 3}
+  - name: 1
+    prefab: {fileID: 2159145928482906798, guid: 4f0acf8fa78700042ac40b964a556a07, type: 3}
