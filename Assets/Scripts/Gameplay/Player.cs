@@ -14,10 +14,13 @@ public class Player : MonoBehaviour
     private ContactFilter2D enemyFilter;
     [SerializeField]
     private List<Collider2D> enemyContactColliders;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
     private float currentHealth;
     private Rigidbody2D rb;
     private PolygonCollider2D collider;
+    private Animator animator;
 
     private void Awake()
     {
@@ -35,6 +38,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<PolygonCollider2D>();
         enemyContactColliders = new List<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -47,6 +52,12 @@ public class Player : MonoBehaviour
     {
         Vector2 moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rb.MovePosition((Vector2) transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
+        animator.SetBool("isWalking", moveDir.magnitude > 0);
+        if (moveDir.x != 0)
+        {
+            spriteRenderer.flipX = moveDir.x < 0;
+        }
+        
     }
 
     private void CheckForDmg()
