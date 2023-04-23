@@ -7,7 +7,7 @@ public class PrickyCommand : ModifierCommand
 {
     private float damageMultiplier = 2f;
 
-    public void Start()
+    public override void Start()
     {
         cooldown = 5f;
         commandSOName = "Pricky";

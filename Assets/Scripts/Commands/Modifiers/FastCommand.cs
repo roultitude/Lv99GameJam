@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class OverwhelmingCommand : ModifierCommand
+public class FastCommand : ModifierCommand
 {
-    float dmgMulti = 1.5f;
-    float sizeMulti = 2f;
+    private float speedMultiplier = 2f;
 
     public override void Start()
     {
-
-        base.Start();
         cooldown = 5f;
-        commandSOName = "Overwhelming";
+        commandSOName = "Fast";
         applicableSpellTypes = new List<SpellType> { SpellType.MELEE, SpellType.AOE, SpellType.ORBITAL, SpellType.PROJECTILE };
 
     }
-
-
     public override SpellCommand ApplyEffect(SpellCommand spell)
     {
-       spell.damage *= dmgMulti;
-       spell.size *= sizeMulti;
+        spell.speed *= speedMultiplier;
         base.StartCooldown();
         return spell;
     }
+
 }

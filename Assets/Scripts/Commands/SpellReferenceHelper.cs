@@ -13,7 +13,8 @@ public class SpellReferenceHelper : MonoBehaviour
     public enum SpellNames
     {
         Slash,
-        Meow
+        Meow,
+        Coconut
 
     }
     [Serializable]

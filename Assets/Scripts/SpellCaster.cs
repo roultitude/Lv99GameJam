@@ -6,13 +6,15 @@ using UnityEngine.WSA;
 
 public class SpellCaster : MonoBehaviour
 {
-    List<Command> commands;
+    public List<Command> commands;
     Queue<CommandSO> modifierQueue = new(10);
+    public static SpellCaster instance;
     bool hasSubscribed = false;
     // Start is called before the first frame update
     void Start()
     {
         commands = new List<Command>(GetComponents<Command>());
+        if(instance == null) { instance = this; }
     }
 
     private void Update()
@@ -64,7 +66,7 @@ public class SpellCaster : MonoBehaviour
         }
 
         modifierQueue.Clear();
-        toCast.execute();
+        toCast.CreateSpell();
     }
 
     private Command FindAvailableCommand(CommandSO command)

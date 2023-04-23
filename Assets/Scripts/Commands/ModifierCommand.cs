@@ -9,6 +9,10 @@ public abstract class ModifierCommand : Command
     {
         return applicableSpellTypes.Contains(spell.spellType) && !isOnCooldown;
     }
+    public virtual void Start()
+    {
+        isSpell = false;
+    }
 
     public List<SpellType> applicableSpellTypes { get; protected set; }
 

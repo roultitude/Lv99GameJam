@@ -1,28 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class OverwhelmingCommand : ModifierCommand
+public class LotsOfCommand : ModifierCommand
 {
-    float dmgMulti = 1.5f;
-    float sizeMulti = 2f;
 
     public override void Start()
     {
-
-        base.Start();
         cooldown = 5f;
-        commandSOName = "Overwhelming";
+        commandSOName = "Lots Of";
         applicableSpellTypes = new List<SpellType> { SpellType.MELEE, SpellType.AOE, SpellType.ORBITAL, SpellType.PROJECTILE };
 
     }
-
-
     public override SpellCommand ApplyEffect(SpellCommand spell)
     {
-       spell.damage *= dmgMulti;
-       spell.size *= sizeMulti;
+        spell.lotsOf +=1;
         base.StartCooldown();
         return spell;
     }
+
 }
