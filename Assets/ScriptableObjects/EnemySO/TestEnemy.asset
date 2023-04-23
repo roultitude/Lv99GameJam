@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e266c377a20b1be468a5375d1d4cad1d, type: 3}
   m_Name: TestEnemy
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 9cfa39010fe314547b3c17a05ff5f403, type: 3}
+  sprite: {fileID: 21300000, guid: 83321c22223cbcb459eb802659e6e178, type: 3}
   maxHP: 5
   moveSpeed: 2
   damage: 5

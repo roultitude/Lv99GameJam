@@ -10,7 +10,7 @@ public class MeowCommand : SpellCommand
     {
         cooldown = 2f;
         baseDamage = 5f;
-        baseSpeed = 5f;
+        baseSpeed = 2f;
         baseSize = 5f;
         commandSOName = "Meow";
     }
