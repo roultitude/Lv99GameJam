@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 
 public class AudioInputManager : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class AudioInputManager : MonoBehaviour
     private AudioClip _clip;
     [SerializeField]
     private int _segmentCursor;
+
+    public bool isMainMenu = false;
+
 
     public bool printDB = false;
     private void OnEnable()
@@ -143,7 +147,23 @@ public class AudioInputManager : MonoBehaviour
 
         var res = await whisper.GetTextAsync(data, _clip.frequency, _clip.channels);
 
+        if (isMainMenu)
+        {
+            string input = res.Result.StripPunctuation().ToLower();
+            if (input.Contains("game") || input.Contains("gain") || input.Contains("gane") || input.Contains("gayne") || input.Contains("gein") || input.Contains("gueyne") )
+            {
+                //Swap scene
+                SceneManager.LoadScene(sceneName: "GameScene");
+            }
+            return;
+
+        }
+
         timeText.text = $"Time: {sw.ElapsedMilliseconds} ms";
+
+
+
+
         if (res == null || res.Result.Length == 0|| Regex.IsMatch(res.Result, pattern))
             return;
 
