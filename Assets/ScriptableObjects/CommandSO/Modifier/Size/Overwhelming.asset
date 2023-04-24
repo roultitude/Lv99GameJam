@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Overwhelming
   m_EditorClassIdentifier: 
   alternative: []
-  commandName: Overwhelming
   commandType: 0
+  brightSprite: {fileID: 21300000, guid: 1f244d7a8dbaaf7438e3b40865d5a446, type: 3}
+  dullSprite: {fileID: 21300000, guid: 70a8fc2e766afd946bca9b5022a90fc6, type: 3}
+  description: Area of Effect+

@@ -20,3 +20,6 @@ MonoBehaviour:
   - go connect
   - poco nut
   commandType: 1
+  brightSprite: {fileID: 21300000, guid: 6d1ce30c02bde8a4ab0aa21d84db9f94, type: 3}
+  dullSprite: {fileID: 21300000, guid: 03765ca2044d5184896b4ee95457c561, type: 3}
+  description: Tosses 3 coconuts at enemies

@@ -17,6 +17,7 @@ public class CoconutCommand : SpellCommand
         baseSpeed = 1f;
         baseSize = 1f;
         commandSOName = "Coconut";
+        spellType = SpellType.PROJECTILE;
     }
     public override void execute()
     {

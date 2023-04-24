@@ -18,5 +18,7 @@ public class CommandSO : ScriptableObject
 
     public CommandType commandType;
 
-
+    public Sprite brightSprite;
+    public Sprite dullSprite;
+    public string description;
 }

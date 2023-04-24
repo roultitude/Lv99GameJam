@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 2720877256353902398}
   - component: {fileID: 115767719084651840}
   m_Layer: 0
-  m_Name: Coconut
+  m_Name: CoconutProj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

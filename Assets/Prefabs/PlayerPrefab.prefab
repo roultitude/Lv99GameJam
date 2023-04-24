@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 3937689854208255054}
   - component: {fileID: 1770608434980108329}
   - component: {fileID: 1014694524430725779}
-  - component: {fileID: 2690795487551889288}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -362,26 +361,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61fb9f50c9420f547b2b2f1389b9655d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0
-  commandSOName: 
-  isSpell: 0
-  spellType: 0
-  damage: 0
-  speed: 0
-  size: 0
-  lotsOf: 0
---- !u!114 &2690795487551889288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8138905828551136621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49a16fd57b27de4dba2291e6eb00b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0

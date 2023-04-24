@@ -9,8 +9,6 @@ public class OverwhelmingCommand : ModifierCommand
 
     public override void Start()
     {
-
-        base.Start();
         cooldown = 5f;
         commandSOName = "Overwhelming";
         applicableSpellTypes = new List<SpellType> { SpellType.MELEE, SpellType.AOE, SpellType.ORBITAL, SpellType.PROJECTILE };

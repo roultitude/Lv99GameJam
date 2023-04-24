@@ -12,7 +12,6 @@ public class Coconut : Spell
 
     private void Start()
     {
-
         gameObject.GetComponent<Rigidbody2D>().AddForce( new Vector2(Random.Range(XRange.x, XRange.y) * speed, Random.Range(YRange.x, YRange.y) * speed));
         Destroy(gameObject, lifeTime);
     }

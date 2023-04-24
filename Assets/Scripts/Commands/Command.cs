@@ -7,15 +7,17 @@ using UnityEngine.Rendering;
 public abstract class Command : MonoBehaviour
 {
     [HideInInspector] public float cooldown;
-    [HideInInspector] public bool isOnCooldown { set; get; }
+    [HideInInspector] public bool isOnCooldown { get { return timer > 0; } }
 
     [HideInInspector] public string commandSOName;
 
     [HideInInspector] public bool isSpell;
 
+
+    public float timer;
     public void StartCooldown()
     {
-        StartCoroutine(StartCooldownInternal());
+        timer = cooldown;
     }
 
     public enum SpellType
@@ -28,18 +30,20 @@ public abstract class Command : MonoBehaviour
         SUPER
     }
 
-    private IEnumerator StartCooldownInternal()
-    {
-        isOnCooldown = true;
-        yield return new WaitForSeconds(cooldown);
-        isOnCooldown = false;
-        yield return null;
-    }
-
     public void EndCooldown()
     {
-        isOnCooldown = false;
+        timer = 0;
     }
 
-    
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+    }
+
+    public float GetCooldownRemaining()
+    {
+        if (timer < 0) return 0;
+        return timer / cooldown;
+    }
+
 }

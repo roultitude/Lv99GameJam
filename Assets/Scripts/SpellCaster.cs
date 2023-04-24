@@ -26,9 +26,24 @@ public class SpellCaster : MonoBehaviour
         }
     }
 
-    void AddNewCommand(string commandName)
+    public void AddNewCommand(CommandSO upgrade)
     {
-        //Todo
+        string commandName = upgrade.name;
+        Command commandComponent = null;
+
+        switch(commandName)
+        {
+            case "Meow":
+                commandComponent = gameObject.AddComponent<MeowCommand>(); break;
+            case "Coconut":
+                commandComponent = gameObject.AddComponent<CoconutCommand>(); break;
+            case "Overwhelming":
+                commandComponent = gameObject.AddComponent<OverwhelmingCommand>(); break;
+            default:
+                break;
+        }
+        CommandCooldownUI.instance.AddCommandToUi(commandComponent, upgrade);
+        commands = new List<Command>(GetComponents<Command>());
     }
 
     public void OnSpellCast(CommandSO command)

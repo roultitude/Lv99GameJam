@@ -13,6 +13,7 @@ public class MeowCommand : SpellCommand
         baseSpeed = 2f;
         baseSize = 5f;
         commandSOName = "Meow";
+        spellType = SpellType.MELEE;
     }
     public override void execute()
     {

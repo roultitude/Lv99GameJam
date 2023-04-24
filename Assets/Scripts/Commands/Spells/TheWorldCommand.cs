@@ -24,7 +24,7 @@ public class TheWorldCommand : SpellCommand
         {
             if(command.isSpell && command.isOnCooldown && ((SpellCommand) command).spellType != SpellType.SUPER)
             {
-                command.isOnCooldown = false;
+                command.EndCooldown();
             }
         }
 
