@@ -15,3 +15,6 @@ MonoBehaviour:
   alternative:
   - sless
   commandType: 1
+  brightSprite: {fileID: 21300000, guid: ef39da735877f26428afc3083fbb612c, type: 3}
+  dullSprite: {fileID: 21300000, guid: ef39da735877f26428afc3083fbb612c, type: 3}
+  description: Flying sword slashes enemies

@@ -39,6 +39,26 @@ public class SpellCaster : MonoBehaviour
                 commandComponent = gameObject.AddComponent<CoconutCommand>(); break;
             case "Overwhelming":
                 commandComponent = gameObject.AddComponent<OverwhelmingCommand>(); break;
+            case "Slash":
+                commandComponent = gameObject.AddComponent<SlashCommand>(); break;
+            case "Accelerate":
+                commandComponent = gameObject.AddComponent<AccelerateCommand>(); break;
+            case "Blink":
+                commandComponent = gameObject.AddComponent<BlinkCommand>(); break;
+            case "Fast":
+                commandComponent = gameObject.AddComponent<FastCommand>(); break;
+            case "Its Morbin Time":
+                commandComponent = gameObject.AddComponent<ItsMorbinTimeCommand>(); break;
+            case "Lots Of":
+                commandComponent = gameObject.AddComponent<LotsOfCommand>(); break;
+            case "Painful":
+                commandComponent = gameObject.AddComponent<PainfulCommand>(); break;
+            case "Pricky":
+                commandComponent = gameObject.AddComponent<PrickyCommand>(); break;
+            case "Retreat":
+                commandComponent = gameObject.AddComponent<RetreatCommand>(); break;
+            case "The World":
+                commandComponent = gameObject.AddComponent<TheWorldCommand>(); break;
             default:
                 break;
         }
