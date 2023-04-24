@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3338582712680813821}
   - component: {fileID: 8597341435259144570}
   - component: {fileID: 3104175699359307327}
+  - component: {fileID: 8315320775905032102}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8597341435259144570
 MonoBehaviour:
@@ -60,3 +61,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expPrefab: {fileID: 4964135360049374232, guid: feab591f49529eb41a208574684c9d06, type: 3}
+--- !u!114 &8315320775905032102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044857955794237635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7c18620c323414a849913f889acb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultData: {fileID: 11400000, guid: 1749513161c8f7e4db31e46d13392ba2, type: 2}
+  _canvasPrefab: {fileID: 1926280506753864649, guid: e124e19729a322b4281287dcc0eb622b, type: 3}
+  _mainCamera: {fileID: 0}

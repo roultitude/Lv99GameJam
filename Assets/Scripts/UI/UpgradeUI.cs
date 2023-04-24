@@ -6,12 +6,23 @@ using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour
 {
+    public static UpgradeUI instance;
+
     [SerializeField]
     CommandSO[] upgrades = new CommandSO[3];
     [SerializeField]
     Button[] upgradeButtons = new Button[3];
     [SerializeField]
     TextMeshProUGUI[] upgradeText = new TextMeshProUGUI[3];
+
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+        }
+        else instance = this;
+    }
 
     public void SetupUpgrades(CommandSO[] upgrades)
     {

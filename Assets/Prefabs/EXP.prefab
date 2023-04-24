@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4964135360049374232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 115534043, guid: 3e5dd433117f91b48b9c2d82d8aed6c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,11 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expValue: 0
   hasBeenCollected: 0
-  smallEXP: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  smallEXP: {fileID: 115534043, guid: 3e5dd433117f91b48b9c2d82d8aed6c6, type: 3}
   smallEXPThreshold: 5
-  mediumEXP: {fileID: 21300000, guid: a9354548f1d8e4015830a88081482039, type: 3}
+  mediumEXP: {fileID: -680253850, guid: 3e5dd433117f91b48b9c2d82d8aed6c6, type: 3}
   mediumEXPThreshold: 25
-  bigEXP: {fileID: 21300000, guid: 68e5a78013e33f247822a837e55b0ab4, type: 3}
+  bigEXP: {fileID: 86577152, guid: 3e5dd433117f91b48b9c2d82d8aed6c6, type: 3}
 --- !u!58 &1230137860157258135
 CircleCollider2D:
   m_ObjectHideFlags: 0

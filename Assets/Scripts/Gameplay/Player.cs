@@ -106,7 +106,6 @@ public class Player : MonoBehaviour
         foreach(Collider2D col in expContactColliders)
         {
             EXP e = col.GetComponent<EXP>();
-            print("Touched" + col.gameObject.name);
 
             if (e)
             {
@@ -133,7 +132,7 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
-        print("wow!");
+        UpgradeManager.instance.ShowUpgrades();
     }
 
     private void changeHealth(float amt)

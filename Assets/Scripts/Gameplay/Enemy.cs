@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemySO data;
     public SpriteRenderer spriteRenderer;
     public float exp;
+    public Color onDamageColor;
 
     [SerializeField]
     private float health;
@@ -26,6 +28,11 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float amt)
     {
+        DynamicTextManager.CreateText2D(transform.position, amt.ToString(),DynamicTextManager.defaultData);
+        if(!DOTween.IsTweening(this.gameObject))
+        {
+            spriteRenderer.DOColor(onDamageColor, 0.5f).From();
+        }
         health -= amt;
         if (health < 0) 
         {

@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  exp: 0
+  onDamageColor: {r: 1, g: 0.4943396, b: 0.597522, a: 1}
   health: 0
 --- !u!212 &5310621693168058829
 SpriteRenderer:

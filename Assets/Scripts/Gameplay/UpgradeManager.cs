@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager instance;
-
-    [SerializeField]
-    UpgradeUI upgradeUI;
 
     public List<CommandSO> upgradePool;
 
@@ -23,9 +21,9 @@ public class UpgradeManager : MonoBehaviour
 
     public void ShowUpgrades()
     {
-        upgradeUI.gameObject.SetActive(true);
+        UpgradeUI.instance.gameObject.SetActive(true);
 
-        List<CommandSO> pool = upgradePool;
+        List<CommandSO> pool = new List<CommandSO> (upgradePool);
         CommandSO[] chosenUpgrades = new CommandSO[3];
 
         Shuffle(pool);
@@ -37,13 +35,13 @@ public class UpgradeManager : MonoBehaviour
             Debug.Log(chosenUpgrades[i]);
         }
 
-        upgradeUI.SetupUpgrades(chosenUpgrades);
+        UpgradeUI.instance.SetupUpgrades(chosenUpgrades);
     }
 
     public void SelectUpgrade(CommandSO upgrade)
     {
         SpellCaster.instance.AddNewCommand(upgrade);
-        upgradeUI.gameObject.SetActive(false);
+        UpgradeUI.instance.gameObject.SetActive(false);
     }
 
 
