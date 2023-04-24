@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f658ae90d6f292e44bbda9ad21e52faa, type: 3}
   m_Name: Overwhelming
   m_EditorClassIdentifier: 
-  alternative: []
+  alternative:
+  - overwhelm
+  - overwhelms
   commandType: 0
   brightSprite: {fileID: 21300000, guid: 1f244d7a8dbaaf7438e3b40865d5a446, type: 3}
   dullSprite: {fileID: 21300000, guid: 70a8fc2e766afd946bca9b5022a90fc6, type: 3}

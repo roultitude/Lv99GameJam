@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alternative:
   - bling
+  - blinking
+  - blinks
   commandType: 1
+  brightSprite: {fileID: 0}
+  dullSprite: {fileID: 0}
+  description: Teleports you forward

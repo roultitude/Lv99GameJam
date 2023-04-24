@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        DOTween.Kill(this);
         EXPPoolManager.instance.SpawnEXP(transform.position, exp);
         spriteRenderer.enabled = false;
         gameObject.SetActive(false);

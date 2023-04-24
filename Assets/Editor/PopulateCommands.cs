@@ -49,7 +49,7 @@ public class PopulateCommands : EditorWindow
         if(upgradeManager != null)
         {
             upgradeManager.upgradePool = allCommands;
-            PrefabUtility.SaveAsPrefabAsset(spellSystemPrefab, spellSystemPrefabPath);
+            PrefabUtility.SaveAsPrefabAsset(gameManagerPrefab, gameManagerPath);
             Debug.Log("Populated commands list with " + allCommands.Count + " commands and saved to prefab.");
         }
         else

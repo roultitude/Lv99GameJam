@@ -15,4 +15,10 @@ MonoBehaviour:
   alternative:
   - Prickly
   - Prickey
+  - prick
+  - pricked
+  - pricks
   commandType: 0
+  brightSprite: {fileID: 21300000, guid: fde3eb264e16c004586b8dbc4f46e815, type: 3}
+  dullSprite: {fileID: 21300000, guid: a3b7d0b90521ed841b94879c6f9a408c, type: 3}
+  description: Damage+

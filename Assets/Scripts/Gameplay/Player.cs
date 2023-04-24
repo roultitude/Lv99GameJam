@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     private float currentEXP = 0;
     private float expToNextLevel = 6;
     private float expScale = 1.3f;
-    private int currentLevel {get;set;}
+    public int currentLevel {get;set;}
 
     private Rigidbody2D rb;
     private PolygonCollider2D collider;
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
         Move();
         CheckForDmg();
         CheckForExp();
+        spriteRenderer.color = Color.white;
     }
 
     private void Move()
@@ -141,10 +143,11 @@ public class Player : MonoBehaviour
         currentEXP += expValue;
         if(currentEXP > expToNextLevel)
         {
+            currentLevel += 1;
             LevelUp();
             currentEXP -= expToNextLevel;
             expToNextLevel *= expScale;
-            currentLevel += 1;
+            
 
         }
 
@@ -158,6 +161,7 @@ public class Player : MonoBehaviour
     private void changeHealth(float amt)
     {
         currentHealth += amt;
+        spriteRenderer.color = Color.red;
         if(currentHealth < 0)
         {
             Die();
@@ -167,5 +171,10 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene(0);
+    }
+    public float GetEXPFill()
+    {
+        return currentEXP / expToNextLevel;
     }
 }

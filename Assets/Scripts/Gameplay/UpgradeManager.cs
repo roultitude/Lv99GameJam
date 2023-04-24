@@ -6,6 +6,9 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager instance;
+    public GameObject upgradeUIPanel;
+    public CommandSO[] startingUpgradeChoice;
+
 
     public List<CommandSO> upgradePool;
 
@@ -16,12 +19,16 @@ public class UpgradeManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        ShowUpgrades();
     }
 
+    private void Start()
+    {
+        ShowUpgrades();
+    }
     public void ShowUpgrades()
     {
-        UpgradeUI.instance.gameObject.SetActive(true);
+        
+        upgradeUIPanel.gameObject.SetActive(true);
 
         List<CommandSO> pool = new List<CommandSO> (upgradePool);
         CommandSO[] chosenUpgrades = new CommandSO[3];
@@ -34,14 +41,24 @@ public class UpgradeManager : MonoBehaviour
             pool.RemoveAt(0);
             Debug.Log(chosenUpgrades[i]);
         }
-
+        if (Player.Instance.currentLevel == 1)
+        {
+            chosenUpgrades = startingUpgradeChoice;
+        }
         UpgradeUI.instance.SetupUpgrades(chosenUpgrades);
+        Time.timeScale = 0;
     }
 
     public void SelectUpgrade(CommandSO upgrade)
     {
         SpellCaster.instance.AddNewCommand(upgrade);
-        UpgradeUI.instance.gameObject.SetActive(false);
+        upgradeUIPanel.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        if(upgradePool.Count > 3)
+        {
+            upgradePool.Remove(upgrade);
+        }
+        
     }
 
 

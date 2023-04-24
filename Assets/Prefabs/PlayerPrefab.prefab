@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1463023006065917618}
   - component: {fileID: 6271147594750592550}
   - component: {fileID: 5486496546806271006}
-  - component: {fileID: 6769896603645088347}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -245,24 +244,3 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &6769896603645088347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8138905828551136621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806214c982f47c54eb9e911acde3e044, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0
-  commandSOName: 
-  isSpell: 0
-  timer: 0
-  spellType: 0
-  damage: 0
-  speed: 0
-  size: 0
-  lotsOf: 0

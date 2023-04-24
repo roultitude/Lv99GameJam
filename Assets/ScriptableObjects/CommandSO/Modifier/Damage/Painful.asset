@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f658ae90d6f292e44bbda9ad21e52faa, type: 3}
   m_Name: Painful
   m_EditorClassIdentifier: 
-  alternative: []
-  commandName: Painful
+  alternative:
+  - pain
+  - pains
   commandType: 0
+  brightSprite: {fileID: 21300000, guid: 25d84ffe232021248b09a077260d5036, type: 3}
+  dullSprite: {fileID: 21300000, guid: a615ebf166e226041b1565ca94f36eee, type: 3}
+  description: Damage+

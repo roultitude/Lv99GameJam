@@ -19,6 +19,8 @@ MonoBehaviour:
   - mail
   - mao
   - meal
+  - meowing
+  - meows
   commandType: 1
   brightSprite: {fileID: 21300000, guid: 214a522188ad8c446b30ead19de4ebbc, type: 3}
   dullSprite: {fileID: 21300000, guid: b596bc6693a61de479afbe0681c4cec5, type: 3}

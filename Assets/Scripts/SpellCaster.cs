@@ -59,6 +59,8 @@ public class SpellCaster : MonoBehaviour
                 commandComponent = gameObject.AddComponent<RetreatCommand>(); break;
             case "The World":
                 commandComponent = gameObject.AddComponent<TheWorldCommand>(); break;
+            case "Spider":
+                commandComponent = gameObject.AddComponent<SpiderCommand>(); break;
             default:
                 break;
         }
