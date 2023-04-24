@@ -17,6 +17,6 @@ MonoBehaviour:
   - blinking
   - blinks
   commandType: 1
-  brightSprite: {fileID: 0}
-  dullSprite: {fileID: 0}
+  brightSprite: {fileID: 21300000, guid: eda9d544a15c2584d9a0b2b259297cb4, type: 3}
+  dullSprite: {fileID: 21300000, guid: 16d894b5248ea3c429b30251be925ae5, type: 3}
   description: Teleports you forward

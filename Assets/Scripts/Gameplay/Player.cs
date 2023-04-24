@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private Image hpBar;
 
     private float currentHealth;
     private float currentEXP = 0;
@@ -176,5 +180,10 @@ public class Player : MonoBehaviour
     public float GetEXPFill()
     {
         return currentEXP / expToNextLevel;
+    }
+
+    private void Update()
+    {
+        hpBar.fillAmount = currentHealth / maxHealth;
     }
 }
