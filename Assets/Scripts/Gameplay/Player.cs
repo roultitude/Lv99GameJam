@@ -116,6 +116,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    public Vector3 GetNearbyEnemyPosition()
+    {
+        Collider2D[] collides = Physics2D.OverlapCircleAll(transform.position, 10, enemyFilter.layerMask);
+        
+        if(collides.Length == 0)
+        {
+            return transform.position;
+        } 
+        Vector3 result = collides[0].gameObject.transform.position;
+        foreach(Collider2D collider in collides)
+        {
+            if((collider.gameObject.transform.position - transform.position).sqrMagnitude <
+                (result - transform.position).sqrMagnitude)
+            {
+                result = collider.gameObject.transform.position;
+            }
+        }
+        return result;
+    }
+
     private void changeEXP(float expValue)
     {
         currentEXP += expValue;

@@ -12,6 +12,8 @@ public abstract class SpellCommand : Command
     protected float baseDamage;
     protected float baseSpeed;
     protected float baseSize;
+
+    protected Quaternion shootDirection = Quaternion.Euler(0, 0, 0);
     
 
     public virtual void Start()
@@ -38,13 +40,14 @@ public abstract class SpellCommand : Command
             return;
 
         print("Lots of: " + lotsOf);
-        for(int x = 0; x < lotsOf; x++) {
-            
-            transform.rotation *= Quaternion.Euler(0, 0, -45);
+        shootDirection = Quaternion.Euler(0, 0, 0); 
+        for (int x = 1; x <= lotsOf; x++) {
+
+            shootDirection *= Quaternion.Euler(0, 0, -45 * x);
             execute();
-            transform.rotation *= Quaternion.Euler(0, 0, 90);
+            shootDirection *= Quaternion.Euler(0, 0, 90 * x);
             execute();
-            transform.rotation *= Quaternion.Euler(0, 0, -45);
+            shootDirection *= Quaternion.Euler(0, 0, -45 * x);
         }
 
         execute();

@@ -13,10 +13,11 @@ public class SlashCommand : SpellCommand
         baseSize = 5f;
         commandSOName = "Slash";
     }
+
     public override void execute()
     {
 
-        GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Slash),transform.position,transform.rotation);
+        GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Slash),transform.position,shootDirection);
         print("dmg: " + damage + "\t speed :" + speed + "\t size" + size);
         obj.GetComponent<Spell>().Init(damage, speed, size);
 

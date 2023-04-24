@@ -24,7 +24,7 @@ public class CoconutCommand : SpellCommand
 
         for(int i = 0; i < repeats; i++)
         {
-            GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Coconut), transform.position, transform.rotation);
+            GameObject obj = Instantiate(SpellReferenceHelper.instance.getKey(SpellReferenceHelper.SpellNames.Coconut), transform.position, shootDirection);
             print("dmg: " + damage + "\t speed :" + speed + "\t size" + size);
             obj.GetComponent<Spell>().Init(damage, speed, size);
 
