@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,21 @@ public class Player : MonoBehaviour
     private ContactFilter2D enemyFilter;
     [SerializeField]
     private List<Collider2D> enemyContactColliders;
+
+    [SerializeField]
+    private ContactFilter2D expFilter;
+    [SerializeField]
+    private List<Collider2D> expContactColliders;
+
     [SerializeField]
     private SpriteRenderer spriteRenderer;
 
     private float currentHealth;
+    private float currentEXP = 0;
+    private float expToNextLevel = 6;
+    private float expScale = 1.3f;
+    private int currentLevel {get;set;}
+
     private Rigidbody2D rb;
     private PolygonCollider2D collider;
     private Animator animator;
@@ -37,9 +49,11 @@ public class Player : MonoBehaviour
     private void Setup()
     {
         currentHealth = maxHealth;
+        currentLevel = 1;
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<PolygonCollider2D>();
         enemyContactColliders = new List<Collider2D>();
+        expContactColliders = new List<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -48,6 +62,7 @@ public class Player : MonoBehaviour
     {
         Move();
         CheckForDmg();
+        CheckForExp();
     }
 
     private void Move()
@@ -83,6 +98,42 @@ public class Player : MonoBehaviour
                 changeHealth(-e.data.damage);
             }
         }
+    }
+
+    private void CheckForExp()
+    {
+        Physics2D.OverlapCollider(collider, expFilter, expContactColliders);
+        foreach(Collider2D col in expContactColliders)
+        {
+            EXP e = col.GetComponent<EXP>();
+            print("Touched" + col.gameObject.name);
+
+            if (e)
+            {
+                
+                changeEXP(e.expValue);
+                e.Pool();
+            }
+        }
+    }
+
+    private void changeEXP(float expValue)
+    {
+        currentEXP += expValue;
+        if(currentEXP > expToNextLevel)
+        {
+            LevelUp();
+            currentEXP -= expToNextLevel;
+            expToNextLevel *= expScale;
+            currentLevel += 1;
+
+        }
+
+    }
+
+    private void LevelUp()
+    {
+        print("wow!");
     }
 
     private void changeHealth(float amt)

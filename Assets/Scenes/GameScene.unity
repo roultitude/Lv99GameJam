@@ -525,7 +525,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 16.875
+  orthographic size: 9.1875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2550,6 +2550,26 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: expFilter.useTriggers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: expFilter.useLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: enemyFilter.useTriggers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: enemyFilter.useLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964540104838368302, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
+      propertyPath: expFilter.layerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 8138905828551136621, guid: 8ca5a02611220624daff229572bf90bc, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
@@ -2627,6 +2647,7 @@ MonoBehaviour:
   cooldown: 0
   commandSOName: 
   isSpell: 0
+  timer: 0
   spellType: 0
   damage: 0
   speed: 0
@@ -2647,6 +2668,7 @@ MonoBehaviour:
   cooldown: 0
   commandSOName: 
   isSpell: 0
+  timer: 0
 --- !u!114 &1843524283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2662,6 +2684,7 @@ MonoBehaviour:
   cooldown: 0
   commandSOName: 
   isSpell: 0
+  timer: 0
   spellType: 0
   damage: 0
   speed: 0

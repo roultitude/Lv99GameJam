@@ -16,3 +16,4 @@ MonoBehaviour:
   maxHP: 5
   moveSpeed: 2
   damage: 5
+  expValue: 1
