@@ -14,7 +14,10 @@ public class SpellReferenceHelper : MonoBehaviour
     {
         Slash,
         Meow,
-        Coconut
+        Coconut,
+        Spider,
+        SpiderWeb,
+        SpiderWebMover
 
     }
     [Serializable]
