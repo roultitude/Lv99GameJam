@@ -9,4 +9,5 @@ public class EnemySO : ScriptableObject
     public float maxHP;
     public float moveSpeed;
     public float damage;
+    public float expValue;
 }

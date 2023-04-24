@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public EnemySO data;
     public SpriteRenderer spriteRenderer;
+    public float exp;
 
     [SerializeField]
     private float health;
@@ -17,6 +18,9 @@ public class Enemy : MonoBehaviour
     public void Setup(EnemySO data)
     {
         this.data = data;
+        this.exp = data.expValue;
+        spriteRenderer.enabled = true;
+        gameObject.SetActive(true);
         spriteRenderer.sprite = data.sprite;
         health = data.maxHP;
     }
@@ -31,6 +35,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        EXPPoolManager.instance.SpawnEXP(transform.position, exp);
+        spriteRenderer.enabled = false;
+        gameObject.SetActive(false);
+        EnemySpawner.instance.AddToPool(this);
     }
 }
