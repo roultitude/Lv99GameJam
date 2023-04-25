@@ -56,7 +56,10 @@ public class UpgradeManager : MonoBehaviour
         Time.timeScale = 1;
         if(upgradePool.Count > 3)
         {
-            upgradePool.Remove(upgrade);
+            if(upgrade.commandType == CommandSO.CommandType.Spell)
+            {
+                upgradePool.Remove(upgrade);
+            }
         }
         
     }

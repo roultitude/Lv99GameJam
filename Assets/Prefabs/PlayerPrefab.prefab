@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8630e679bc682249a4f92729ee07fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 2000
   moveSpeed: 10
   enemyFilter:
     useTriggers: 0

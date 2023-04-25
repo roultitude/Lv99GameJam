@@ -7,7 +7,7 @@ public class SpiderCommand : SpellCommand
     public override void Start()
     {
         base.Start();
-        cooldown = 5f;
+        cooldown = 20f;
         baseDamage = 3f;
         baseSpeed = 10f;
         baseSize = 1f;
